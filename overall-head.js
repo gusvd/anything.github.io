@@ -1,12 +1,17 @@
 
 
 // Load Memberstack User Id into Session variable
-MemberStack.onReady.then(function(member) {
-	if (member.loggedIn) {
-		LoggedUserID = member.id;
-		sessionStorage.setItem("LoggedUserID", LoggedUserID);
-	};	
-});
+Function GetUserID() {
+	MemberStack.onReady.then(function(member) {
+		if (member.loggedIn) {
+			LoggedUserID = member.id;
+			sessionStorage.setItem("LoggedUserID", LoggedUserID);
+			return LoggedUserID;
+		};	
+	});
+};
+
+console.log(GetUserID());
 
 // Add links to NavBar
 var Webflow = Webflow || [];
