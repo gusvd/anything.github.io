@@ -7,7 +7,9 @@ function GetUserID() {
 			LoggedUserID = member.id;
 			sessionStorage.setItem("LoggedUserID", LoggedUserID);
 			return LoggedUserID;
-		};	
+		} else {
+			return null;
+		};
 	});
 };
 
@@ -18,9 +20,8 @@ var Webflow = Webflow || [];
 Webflow.push(function () {
 	// DOMready has fired
 	// May now use jQuery and Webflow api
-	var test = sessionStorage.getItem("LoggedUserID");
-	if (sessionStorage.getItem("LoggedUserID")) {
-		LoggedUserID = sessionStorage.getItem("LoggedUserID")
+	if (GetUserID()) {
+		LoggedUserID = GetUserID();
 		document.getElementById("navbar-profile").href="https://crewmates.webflow.io/users/" + LoggedUserID + "#user-profile";
   		document.getElementById("navbar-listings").href="https://crewmates.webflow.io/users/" + LoggedUserID;
   	};
