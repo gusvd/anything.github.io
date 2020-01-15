@@ -11,7 +11,7 @@ Webflow.push(function() {
     var CMSdescription = script_tag.getAttribute("CMSdescription");
     var CMSlistingImage = script_tag.getAttribute("CMSlistingImage");
     var CMSdepartureLocation = script_tag.getAttribute("CMSdepartureLocation");
-    var CMSdestination = script_tag.getAttribute("CMSdestinationx");
+    var CMSdestination = script_tag.getAttribute("CMSdestination");
     var CMScategory = script_tag.getAttribute("CMScategory");
     var CMSlanguageOnboard = script_tag.getAttribute("CMSlanguageOnboard");
     var CMSexpensesCurrency = script_tag.getAttribute("CMSexpensesCurrency");
