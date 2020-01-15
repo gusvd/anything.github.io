@@ -2,7 +2,7 @@
 
 // Load Memberstack User Id into Session variable
 
-var LoggedUserID // global variable
+var LoggedUserID = "" // global variable
 
 MemberStack.onReady.then(function(member) {
 	LoggedUserID = member.id;
@@ -10,6 +10,7 @@ MemberStack.onReady.then(function(member) {
 });
 
 console.log(LoggedUserID);
+
 // Add links to NavBar
 var Webflow = Webflow || [];
 Webflow.push(function () {
