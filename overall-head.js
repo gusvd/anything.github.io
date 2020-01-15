@@ -13,8 +13,9 @@ var Webflow = Webflow || [];
 Webflow.push(function () {
 	// DOMready has fired
 	// May now use jQuery and Webflow api
-	console.log(sessionStorage.getItem("LoggedUserID"));
-	if (LoggedUserID) {
+	var test = LoggedUserID = sessionStorage.getItem("LoggedUserID");
+	if (sessionStorage.getItem("LoggedUserID")) {
+		LoggedUserID = sessionStorage.getItem("LoggedUserID")
 		document.getElementById("navbar-profile").href="https://crewmates.webflow.io/users/" + LoggedUserID + "#user-profile";
   		document.getElementById("navbar-listings").href="https://crewmates.webflow.io/users/" + LoggedUserID;
   	};
