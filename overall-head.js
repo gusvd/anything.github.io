@@ -2,9 +2,10 @@
 
 // Load Memberstack User Id into Session variable
 MemberStack.onReady.then(function(member) {
-	LoggedUserID = member.id;
-	console.log(LoggedUserID);
-	sessionStorage.setItem("LoggedUserID", LoggedUserID);
+	if (!member.loggedIn) {
+		LoggedUserID = member.id;
+		sessionStorage.setItem("LoggedUserID", LoggedUserID);
+	};
 });
 
 // Add links to NavBar
