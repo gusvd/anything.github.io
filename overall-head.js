@@ -1,7 +1,7 @@
 
 
 // Load Memberstack User Id into Session variable
-Function GetUserID() {
+function GetUserID() {
 	MemberStack.onReady.then(function(member) {
 		if (member.loggedIn) {
 			LoggedUserID = member.id;
