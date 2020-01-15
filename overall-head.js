@@ -3,7 +3,7 @@
 // Load Memberstack User Id into Session variable
 MemberStack.onReady.then(function(member) {
 	if (member.loggedIn) {
-		LoggedUserID = member.id;
+		LoggedUser = member.id;
 		sessionStorage.setItem("LoggedUserID", LoggedUserID);
 	};	
 });
