@@ -153,7 +153,7 @@ Webflow.push(function() {
                 document.getElementById('form-name').value = 'update-listing';
                 
                  // Fill memberstack ID hidden field
-                document.getElementById('memberstack-id').value = LoggedUser;
+                document.getElementById('memberstack-id').value = LoggedUserID;
                 
                  // Fill webflow-listing-ider hidden field
                 document.getElementById('webflow-listing-id').value = CMSwebflowListingId;
