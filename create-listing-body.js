@@ -1,33 +1,36 @@
 
-// GET VARIABLES FROM SCRIPT TAG
-var script_tag = document.getElementById('create-listing-body');
-var CMStitle = script_tag.getAttribute("CMStitle");
-var CMSdescription = script_tag.getAttribute("CMSdescription");
-var CMSlistingImage = script_tag.getAttribute("CMSlistingImage");
-var CMSdepartureLocation = script_tag.getAttribute("CMSdepartureLocation");
-var CMSdestination = script_tag.getAttribute("CMSdestinationx");
-var CMScategory = script_tag.getAttribute("CMScategory");
-var CMSlanguageOnboard = script_tag.getAttribute("CMSlanguageOnboard");
-var CMSexpensesCurrency = script_tag.getAttribute("CMSexpensesCurrency");
-var CMSexpensesOnboard = script_tag.getAttribute("CMSexpensesOnboard");
-var CMSboatName = script_tag.getAttribute("CMSboatName");
-var CMSboatModel = script_tag.getAttribute("CMSboatModel");
-var CMSboatSize = script_tag.getAttribute("CMSboatSize");
-var CMSboatHullType = script_tag.getAttribute("CMSboatHullType");
-var CMSboatBuiltYear = script_tag.getAttribute("CMSboatBuiltYear");
-var CMSboatBerths = script_tag.getAttribute("CMSboatBerths");
-var CMSboatDescription = script_tag.getAttribute("CMSboatDescription");
-var CMSwebflowListingId = script_tag.getAttribute("CMSwebflowListingId");
-var CMSexpensesCommute = script_tag.getAttribute("CMSexpensesCommute");
-var CMSdepartureDate = script_tag.getAttribute("CMSdepartureDate");
-var CMSlistingOwner = script_tag.getAttribute("CMSlistingOwner");
-
-
 var Webflow = Webflow || [];
 Webflow.push(function() {
 
     ////////////////////////////////////////
+    // GET VARIABLES FROM SCRIPT TAG
+    ////////////////////////////////////////
+
+    var script_tag = document.getElementById('create-listing-body');
+    var CMStitle = script_tag.getAttribute("CMStitle");
+    var CMSdescription = script_tag.getAttribute("CMSdescription");
+    var CMSlistingImage = script_tag.getAttribute("CMSlistingImage");
+    var CMSdepartureLocation = script_tag.getAttribute("CMSdepartureLocation");
+    var CMSdestination = script_tag.getAttribute("CMSdestinationx");
+    var CMScategory = script_tag.getAttribute("CMScategory");
+    var CMSlanguageOnboard = script_tag.getAttribute("CMSlanguageOnboard");
+    var CMSexpensesCurrency = script_tag.getAttribute("CMSexpensesCurrency");
+    var CMSexpensesOnboard = script_tag.getAttribute("CMSexpensesOnboard");
+    var CMSboatName = script_tag.getAttribute("CMSboatName");
+    var CMSboatModel = script_tag.getAttribute("CMSboatModel");
+    var CMSboatSize = script_tag.getAttribute("CMSboatSize");
+    var CMSboatHullType = script_tag.getAttribute("CMSboatHullType");
+    var CMSboatBuiltYear = script_tag.getAttribute("CMSboatBuiltYear");
+    var CMSboatBerths = script_tag.getAttribute("CMSboatBerths");
+    var CMSboatDescription = script_tag.getAttribute("CMSboatDescription");
+    var CMSwebflowListingId = script_tag.getAttribute("CMSwebflowListingId");
+    var CMSexpensesCommute = script_tag.getAttribute("CMSexpensesCommute");
+    var CMSdepartureDate = script_tag.getAttribute("CMSdepartureDate");
+    var CMSlistingOwner = script_tag.getAttribute("CMSlistingOwner");
+
+    ////////////////////////////////////////
     // EDIT OR VIEW MODE - HIDE/SHOW RELEVANT SECTION
+    ////////////////////////////////////////
 
     // Grab query string
     function getQueryVariable(variable) {
@@ -42,7 +45,9 @@ Webflow.push(function() {
         return (false);
     }
 
-    // If the link is an edit request
+    ////////////////////////////////////////
+    // Check querystring to see if it's an edit request
+
     if (getQueryVariable('managelisting')) {
 
         // Grab Memberstack User Id
@@ -52,8 +57,10 @@ Webflow.push(function() {
             } else {
                 LoggedUserID =  null;
             };
+   
+            ////////////////////////////////////////
+            // Check if the logged in user is the listing owner
 
-           // Check if the logged in user is the listing owner
             if (LoggedUserID == CMSlistingOwner) {
 
                 // Show/hide relevant section
@@ -113,8 +120,9 @@ Webflow.push(function() {
 
                 ////////////////////////////////////////
                 // PREFILL FORM WITH CMS ITEMS FOR EDITING
+                ////////////////////////////////////////
 
-                // Unescapes special characters to be displayed on form fields
+                // Function to unescape special characters to be displayed on form fields
                 function htmlDecode(input) {
                     var doc = new DOMParser().parseFromString(input, "text/html");
                     return doc.documentElement.textContent;
