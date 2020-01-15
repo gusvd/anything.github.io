@@ -1,0 +1,65 @@
+  /* Truncate text to the width of the text field */
+  .truncate { white-space: nowrap; text-overflow: ellipsis; }
+
+  #user-listings-container{ display:none; } /* hide the listing container on the User page */
+  #edit-listing-section{ display:none; } /* hide the form to edit listing on the Collection Template */
+
+
+
+/* /////////////////////////////////// */
+/* Form and validation styling */
+
+/* Form multi-step hide sections at the beggining */
+.form-section {
+  display: none;
+}
+.form-section.current {
+  display: inherit;
+}*
+
+/* Reset apparance and add a down arrow to the select fields */
+select {
+	-webkit-appearance: none;
+    -webkit-border-radius: 0px;
+	background-image: url("https://uploads-ssl.webflow.com/5dd3c9515d0bd969eaaba8e2/5e14a1d2a2387655c49435e4_icons8-collapse-arrow-48.png");
+    background-position: 100% 50%;
+    background-repeat: no-repeat;
+    background-size: 30px 30px;
+}
+
+/* Form validation styles */
+
+input.parsley-success,
+select.parsley-success,
+textarea.parsley-success {
+  color: #468847;
+  background-color: #DFF0D8;
+  border: 1px solid #D6E9C6;
+}
+
+input.parsley-error,
+select.parsley-error,
+textarea.parsley-error {
+  color: #B94A48;
+  background-color: #F2DEDE;
+  border: 1px solid #EED3D7;
+}
+
+.parsley-errors-list {
+  margin: 2px 0 3px;
+  padding: 0;
+  list-style-type: none;
+  font-size: 0.9em;
+  line-height: 0.9em;
+  opacity: 0;
+  color: #B94A48;
+
+  transition: all .3s ease-in;
+  -o-transition: all .3s ease-in;
+  -moz-transition: all .3s ease-in;
+  -webkit-transition: all .3s ease-in;
+}
+
+.parsley-errors-list.filled {
+  opacity: 1;
+}
