@@ -4,7 +4,8 @@
 function GetUserID() {
 	MemberStack.onReady.then(function(member) {
 		if (member.loggedIn) {
-			return member.id;
+			memberid = member.id;
+			return memberid;
 		} else {
 			return null;
 		};
