@@ -9,7 +9,7 @@ MemberStack.onReady.then(function(member) {
 	sessionStorage.setItem("LoggedUserID", LoggedUserID);
 });
 
-
+console.log(LoggedUserID);
 // Add links to NavBar
 var Webflow = Webflow || [];
 Webflow.push(function () {
@@ -18,6 +18,7 @@ Webflow.push(function () {
 
 	document.getElementById("navbar-profile").href="https://crewmates.webflow.io/users/" + LoggedUserID + "#user-profile";
   	document.getElementById("navbar-listings").href="https://crewmates.webflow.io/users/" + LoggedUserID;
-  	console.log(LoggedUserID);
 
+  
 });
+
