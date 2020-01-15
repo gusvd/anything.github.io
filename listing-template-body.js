@@ -169,7 +169,7 @@ Webflow.push(function() {
                 var msec = Date.parse(CMSdepartureDate);
                 var d = new Date(msec);
                 var curr_date = ("0" + (d.getDate())).slice(-2) // Add 0 if the day has single digit.
-                                    var curr_month = ("0" + (d.getMonth() + 1)).slice(-2) // Months are zero based - add 0 if the month has single digit
+                var curr_month = ("0" + (d.getMonth() + 1)).slice(-2) // Months are zero based - add 0 if the month has single digit
                 var curr_year = d.getFullYear();
                 let formatted_date = curr_date + "/" + curr_month + "/" + curr_year
                 document.getElementById('departure-date').value = formatted_date;
