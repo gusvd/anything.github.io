@@ -70,7 +70,7 @@ Webflow.push(function() {
                 // Add date picker to form field
                 var picker = new Pikaday({
                     field: document.getElementById('departure-date'),
-                    format: 'D MMM YYYY',
+                    format: 'DD/MM/YYYY',
                     minDate: moment().toDate()
                 });
 
