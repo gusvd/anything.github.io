@@ -4,12 +4,12 @@
 function GetUserID() {
 	MemberStack.onReady.then(function(member) {
 		if (member.loggedIn) {
-			memberid = member.id;
-			return memberid;
+			memberid = member.id
 		} else {
-			return null;
+			memberid =  null;
 		};
 	});
+	return memberid;
 };
 
 // Add links to NavBar
