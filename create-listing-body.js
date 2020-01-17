@@ -37,6 +37,15 @@ Webflow.push(function() {
         // place fields that are returned to just the address components.
         autocomplete.setFields(['address_components']);
 
+        // When the user selects an address from the drop-down, populate the hidden fields
+        autocomplete.addListener('place_changed', fillInAddress);
+    };
+
+    function fillInAddress (){
+        // Get the place details from the autocomplete object.
+        var place = autocomplete.getPlace();
+
+        console.log(place);        
     };
 
 
