@@ -81,12 +81,11 @@ function initAutocomplete() {
     var input = document.getElementById('departure-location');
 
     var options = {
-        bounds: defaultBounds,
         placeIdOnly
     };
 
     autocomplete = new google.maps.places.Autocomplete(input, options);
-    
+
 
     // Avoid paying for data that you don't need by restricting the set of
     // place fields that are returned to just the address components.
