@@ -77,10 +77,16 @@ var placeSearch, autocomplete;
 function initAutocomplete() {
     // Create the autocomplete object, restricting the search predictions to
     // geographical location types.
-    autocomplete = new google.maps.places.Autocomplete(
-        document.getElementById('departure-location'),
+
+    var input = document.getElementById('departure-location');
+
+    var options = {
+        bounds: defaultBounds,
         placeIdOnly
-    );
+    };
+
+    autocomplete = new google.maps.places.Autocomplete(input, options);
+    
 
     // Avoid paying for data that you don't need by restricting the set of
     // place fields that are returned to just the address components.
