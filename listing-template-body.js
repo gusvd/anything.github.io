@@ -180,3 +180,46 @@ Webflow.push(function() {
     }
 
 });
+
+////////////////////////////////////////////////////////////
+// GOOGLE MAPS AUTO COMPLETE
+var placeSearch, autocomplete;
+
+function initAutocomplete() {
+    // Create the autocomplete object, restricting the search predictions to
+    // geographical location types.
+
+    var input = document.getElementById('departure-location');
+
+    var options = {
+        // fields: ["ALL"]
+        // fields: ["address_components", "place_id"]
+        fields: ["address_components"]
+    };
+
+    autocomplete = new google.maps.places.Autocomplete(input, options);
+
+
+    // // Avoid paying for data that you don't need by restricting the set of
+    // // place fields that are returned to just the address components.
+    // autocomplete.setFields(['address_components'],);
+
+    // When the user selects an address from the drop-down, populate the hidden fields
+    autocomplete.addListener('place_changed', fillInAddress);
+}
+
+function fillInAddress (){
+    // Get the place details from the autocomplete object.
+    var place = autocomplete.getPlace();
+
+    var filtered_array = place.address_components.filter(function(address_component){
+        return address_component.types.includes("country");
+    }); 
+    var country = filtered_array.length ? filtered_array[0].short_name : "";
+
+
+    console.log(place);
+    console.log(country);
+
+    document.getElementById('departure-country').value = country;     
+};
