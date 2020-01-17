@@ -81,7 +81,7 @@ function initAutocomplete() {
     var input = document.getElementById('departure-location');
 
     var options = {
-        placeIdOnly
+        fields: ["place_id"]
     };
 
     autocomplete = new google.maps.places.Autocomplete(input, options);
