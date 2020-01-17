@@ -100,8 +100,6 @@ function initAutocomplete() {
 function fillInAddress (){
     // Get the place details from the autocomplete object.
     var place = autocomplete.getPlace();
-    //document.getElementById('location-country').value = place.;
-
-
-    console.log(place.address_components[5].short_name);        
+    var country = place.address_components[5].short_name;
+    document.getElementById('location-country').value = country.;     
 };
