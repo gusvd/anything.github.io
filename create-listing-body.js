@@ -82,7 +82,7 @@ function initAutocomplete() {
 
     var options = {
         // fields: ["place_id"]
-        fields: ["address_components"]
+        fields: ["address_components", "place_id"]
     };
 
     autocomplete = new google.maps.places.Autocomplete(input, options);
