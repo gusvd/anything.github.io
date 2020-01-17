@@ -11,6 +11,7 @@ Webflow.push(function() {
     var CMSdescription = script_tag.getAttribute("CMSdescription");
     var CMSlistingImage = script_tag.getAttribute("CMSlistingImage");
     var CMSdepartureLocation = script_tag.getAttribute("CMSdepartureLocation");
+    var CMSdepartureCountry = script_tag.getAttribute("CMSdepartureCountry");
     var CMSdestination = script_tag.getAttribute("CMSdestination");
     var CMScategory = script_tag.getAttribute("CMScategory");
     var CMSlanguageOnboard = script_tag.getAttribute("CMSlanguageOnboard");
@@ -136,6 +137,7 @@ Webflow.push(function() {
                 document.getElementById('description').value = htmlDecode(CMSdescription);
                 document.getElementById('listing-image').value = CMSlistingImage;
                 document.getElementById('departure-location').value = CMSdepartureLocation;
+                document.getElementById('departure-country').value = CMSdepartureCountry;
                 document.getElementById('destination').value = htmlDecode(CMSdestination);
                 document.getElementById('category').value = CMScategory;
                 document.getElementById('language-onboard').value = CMSlanguageOnboard;
