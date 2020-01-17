@@ -4,11 +4,8 @@ Webflow.push(function() {
 
     ////////////////////////////////////////////////////////////
     // Load MemberStack member ID into form
-
-    MemberStack.onReady.then(function(member) {
-        document.getElementById('memberstack-id').value = member.id;
-    })
-
+    var LoggedUserID = sessionStorage.getItem("LoggedUserID");
+    document.getElementById('memberstack-id').value = LoggedUserID;
 
     ////////////////////////////////////////////////////////////
     // Add date picker to form field
