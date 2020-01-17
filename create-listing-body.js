@@ -2,22 +2,29 @@
 var Webflow = Webflow || [];
 Webflow.push(function() {
 
+    ////////////////////////////////////////////////////////////
     // Load MemberStack member ID into form
+
     MemberStack.onReady.then(function(member) {
         document.getElementById('memberstack-id').value = member.id;
     })
 
 
+    ////////////////////////////////////////////////////////////
     // Add date picker to form field
+
     var picker = new Pikaday({
         field: document.getElementById('departure-date'),
         format: 'DD/MM/YYYY',
         minDate: moment().toDate()
     });
     
+
+    ////////////////////////////////////////////////////////////
     // Pre-fill expenses filed with 0.00
     document.getElementById('expenses-onboard').value = "0.00";
 
+ 
     ////////////////////////////////////////////////////////////
     // GOOGLE MAPS AUTO COMPLETE
     var placeSearch, autocomplete;
@@ -36,6 +43,7 @@ Webflow.push(function() {
     };
 
 
+    ////////////////////////////////////////////////////////////
     // PARSLEY MULTI-STEP FORM
 
     $(function() {
