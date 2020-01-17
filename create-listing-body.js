@@ -21,33 +21,6 @@ Webflow.push(function() {
     // Pre-fill expenses filed with 0.00
     document.getElementById('expenses-onboard').value = "0.00";
 
- 
-    // ////////////////////////////////////////////////////////////
-    // // GOOGLE MAPS AUTO COMPLETE
-    // var placeSearch, autocomplete;
-
-    // function initAutocomplete() {
-    //     // Create the autocomplete object, restricting the search predictions to
-    //     // geographical location types.
-    //     autocomplete = new google.maps.places.Autocomplete(
-    //         document.getElementById('departure-location')
-    //     );
-
-    //     // Avoid paying for data that you don't need by restricting the set of
-    //     // place fields that are returned to just the address components.
-    //     autocomplete.setFields(['address_components']);
-
-    //     // When the user selects an address from the drop-down, populate the hidden fields
-    //     autocomplete.addListener('place_changed', fillInAddress);
-    // }
-
-    // function fillInAddress (){
-    //     // Get the place details from the autocomplete object.
-    //     var place = autocomplete.getPlace();
-
-    //     console.log(place);        
-    // };
-
 
     ////////////////////////////////////////////////////////////
     // PARSLEY MULTI-STEP FORM
@@ -95,3 +68,30 @@ Webflow.push(function() {
     });
 
 });
+
+ 
+////////////////////////////////////////////////////////////
+// GOOGLE MAPS AUTO COMPLETE
+var placeSearch, autocomplete;
+
+function initAutocomplete() {
+    // Create the autocomplete object, restricting the search predictions to
+    // geographical location types.
+    autocomplete = new google.maps.places.Autocomplete(
+        document.getElementById('departure-location')
+    );
+
+    // Avoid paying for data that you don't need by restricting the set of
+    // place fields that are returned to just the address components.
+    autocomplete.setFields(['address_components']);
+
+    // When the user selects an address from the drop-down, populate the hidden fields
+    autocomplete.addListener('place_changed', fillInAddress);
+}
+
+function fillInAddress (){
+    // Get the place details from the autocomplete object.
+    var place = autocomplete.getPlace();
+
+    console.log(place);        
+};
