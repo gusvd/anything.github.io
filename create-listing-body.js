@@ -81,8 +81,9 @@ function initAutocomplete() {
     var input = document.getElementById('departure-location');
 
     var options = {
-        fields: ["ALL"]
+        // fields: ["ALL"]
         // fields: ["address_components", "place_id"]
+        fields: ["address_components"]
     };
 
     autocomplete = new google.maps.places.Autocomplete(input, options);
@@ -99,6 +100,8 @@ function initAutocomplete() {
 function fillInAddress (){
     // Get the place details from the autocomplete object.
     var place = autocomplete.getPlace();
+    //document.getElementById('location-country').value = place.;
 
-    console.log(place);        
+
+    console.log(place.address_components[5].short_name);        
 };
