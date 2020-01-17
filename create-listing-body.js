@@ -100,10 +100,15 @@ function initAutocomplete() {
 function fillInAddress (){
     // Get the place details from the autocomplete object.
     var place = autocomplete.getPlace();
-    var country = place.address_components[4].short_name;
+
+    var filtered_array = place.address_components.filter(function(address_component){
+        return address_component.types.includes("country");
+    }); 
+    var country = filtered_array.length ? filtered_array[0].short_name : "";
+
 
     console.log(place);
-    console.log(place.address_components[4].short_name);
+    console.log(country);
 
     document.getElementById('departure-country').value = country;     
 };
