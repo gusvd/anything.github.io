@@ -7,6 +7,7 @@ Webflow.push(function() {
         document.getElementById('memberstack-id').value = member.id;
     })
 
+
     // Add date picker to form field
     var picker = new Pikaday({
         field: document.getElementById('departure-date'),
@@ -16,6 +17,24 @@ Webflow.push(function() {
     
     // Pre-fill expenses filed with 0.00
     document.getElementById('expenses-onboard').value = "0.00";
+
+    ////////////////////////////////////////////////////////////
+    // GOOGLE MAPS AUTO COMPLETE
+    var placeSearch, autocomplete;
+
+    function initAutocomplete() {
+        // Create the autocomplete object, restricting the search predictions to
+        // geographical location types.
+        autocomplete = new google.maps.places.Autocomplete(
+            document.getElementById('gmaps-autocomplete')
+        );
+
+        // Avoid paying for data that you don't need by restricting the set of
+        // place fields that are returned to just the address components.
+        autocomplete.setFields(['departure-location']);
+
+    };
+
 
     // PARSLEY MULTI-STEP FORM
 
