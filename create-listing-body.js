@@ -81,15 +81,16 @@ function initAutocomplete() {
     var input = document.getElementById('departure-location');
 
     var options = {
-        fields: ["place_id"]
+        // fields: ["place_id"]
+        fields: ["address_components"]
     };
 
     autocomplete = new google.maps.places.Autocomplete(input, options);
 
 
-    // Avoid paying for data that you don't need by restricting the set of
-    // place fields that are returned to just the address components.
-    autocomplete.setFields(['address_components']);
+    // // Avoid paying for data that you don't need by restricting the set of
+    // // place fields that are returned to just the address components.
+    // autocomplete.setFields(['address_components'],);
 
     // When the user selects an address from the drop-down, populate the hidden fields
     autocomplete.addListener('place_changed', fillInAddress);
