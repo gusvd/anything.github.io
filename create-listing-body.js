@@ -39,7 +39,7 @@ Webflow.push(function() {
 
         // When the user selects an address from the drop-down, populate the hidden fields
         autocomplete.addListener('place_changed', fillInAddress);
-    };
+    }
 
     function fillInAddress (){
         // Get the place details from the autocomplete object.
