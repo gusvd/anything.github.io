@@ -27,6 +27,7 @@ Webflow.push(function() {
     var CMSexpensesCommute = script_tag.getAttribute("CMSexpensesCommute");
     var CMSdepartureDate = script_tag.getAttribute("CMSdepartureDate");
     var CMSmemberstackID = script_tag.getAttribute("CMSmemberstackID");
+    var CMSlistingOwner = script_tag.getAttribute("CMSlistingOwner");
     var CMSlocationGroup = script_tag.getAttribute("CMSlocationGroup");
     var CMSdepartureCountry = script_tag.getAttribute("CMSdepartureCountry");
     var CMSlatLng = script_tag.getAttribute("CMSlatLng");
