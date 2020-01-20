@@ -11,7 +11,6 @@ Webflow.push(function() {
     var CMSdescription = script_tag.getAttribute("CMSdescription");
     var CMSlistingImage = script_tag.getAttribute("CMSlistingImage");
     var CMSdepartureLocation = script_tag.getAttribute("CMSdepartureLocation");
-    var CMSdepartureCountry = script_tag.getAttribute("CMSdepartureCountry");
     var CMSdestination = script_tag.getAttribute("CMSdestination");
     var CMScategory = script_tag.getAttribute("CMScategory");
     var CMSlanguageOnboard = script_tag.getAttribute("CMSlanguageOnboard");
@@ -27,7 +26,12 @@ Webflow.push(function() {
     var CMSwebflowListingId = script_tag.getAttribute("CMSwebflowListingId");
     var CMSexpensesCommute = script_tag.getAttribute("CMSexpensesCommute");
     var CMSdepartureDate = script_tag.getAttribute("CMSdepartureDate");
-    var CMSlistingOwner = script_tag.getAttribute("CMSlistingOwner");
+    var CMSmemberstackID = script_tag.getAttribute("CMSmemberstackID");
+    var CMSlocationGroup = script_tag.getAttribute("CMSlocationGroup");
+    var CMSdepartureCountry = script_tag.getAttribute("CMSdepartureCountry");
+    var CMSlatLng = script_tag.getAttribute("CMSlatLng");
+
+
 
     ////////////////////////////////////////
     // EDIT OR VIEW MODE - HIDE/SHOW RELEVANT SECTION
@@ -150,15 +154,19 @@ Webflow.push(function() {
                 document.getElementById('boat-built-year').value = CMSboatBuiltYear;
                 document.getElementById('boat-berths').value = CMSboatBerths;
                 document.getElementById('boat-description').value = htmlDecode(CMSboatDescription);
+
+                
+                 // Fill hidden fields
+                document.getElementById('memberstack-id').value = LoggedUserID;
+                document.getElementById('webflow-listing-id').value = CMSwebflowListingId;
+
+                document.getElementById('location-group').value = CMSlocationGroup;
+                document.getElementById('latlng').value = CMSlatLng;
+                document.getElementById('departure-country').value = CMSdepartureCountry;
                                     
                 // Fill form-name hidden field to tell Inegromat this form is to update listing
                 document.getElementById('form-name').value = 'update-listing';
                 
-                 // Fill memberstack ID hidden field
-                document.getElementById('memberstack-id').value = LoggedUserID;
-                
-                 // Fill webflow-listing-ider hidden field
-                document.getElementById('webflow-listing-id').value = CMSwebflowListingId;
                 
                 // Expenses commute radio buttons
                 if (CMSexpensesCommute == 'Skipper') {
@@ -181,10 +189,6 @@ Webflow.push(function() {
 
 });
 
-////////////////////////////////////////////////////////////
-// GOOGLE MAPS AUTO COMPLETE
-var placeSearch, autocomplete;
-
 function initAutocomplete() {
     // Create the autocomplete object, restricting the search predictions to
     // geographical location types.
@@ -194,7 +198,7 @@ function initAutocomplete() {
     var options = {
         // fields: ["ALL"]
         // fields: ["address_components", "place_id"]
-        fields: ["address_components"]
+        fields: ["address_components", "geometry"]
     };
 
     autocomplete = new google.maps.places.Autocomplete(input, options);
@@ -212,14 +216,29 @@ function fillInAddress (){
     // Get the place details from the autocomplete object.
     var place = autocomplete.getPlace();
 
+    // Get Country
     var filtered_array = place.address_components.filter(function(address_component){
         return address_component.types.includes("country");
     }); 
     var country = filtered_array.length ? filtered_array[0].short_name : "";
 
+    // Classify continent based on ContinentsTable array
+    var locationGroup = continentsTable[country] || "Not defined";
+
+    //Get LatLong
+
+    var lat = place.geometry.location.lat();
+    var lng = place.geometry.location.lng();
+    var latLng = lat + ", " + lng;
+
 
     console.log(place);
     console.log(country);
+    console.log(locationGroup);
+    console.log(latLng);
 
-    document.getElementById('departure-country').value = country;     
+    document.getElementById('departure-country').value = country; 
+    document.getElementById('location-group').value = locationGroup;
+    document.getElementById('latlng').value = latLng;    
+    
 };
