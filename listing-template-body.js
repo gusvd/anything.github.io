@@ -65,7 +65,7 @@ Webflow.push(function() {
             };
    
             ////////////////////////////////////////
-            // Check if the logged in user is the listing owner
+            // Check if the logged in user (memberstacl ID) is the listing owner (webflow user id)
 
             if (LoggedUserID == CMSlistingOwner) {
 
