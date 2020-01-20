@@ -371,7 +371,7 @@ function fillInAddress (){
     console.log(place);
     console.log(country);
     console.log(locationGroup);
-    console.log(LatLng);
+    console.log(latLng);
 
     document.getElementById('departure-country').value = country; 
     document.getElementById('location-group').value = locationGroup;
