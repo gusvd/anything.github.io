@@ -160,7 +160,7 @@ var continentsTable = { //see https://gist.github.com/nobuti/3816985
   "DE": "Europe", // "Federal Republic of Germany") 
   "GH": "Africa", // "Republic of Ghana") 
   "GI": "Europe", // "Gibraltar") 
-  "GR": ["Europe", "Mediterrenean"], // "Hellenic Republic Greece") 
+  "GR": ["Europe", "Mediterranean"], // "Hellenic Republic Greece") 
   "GL": "North America", // "Greenland") 
   "GD": "North America", // "Grenada") 
   "GP": "North America", // "Guadeloupe") 
