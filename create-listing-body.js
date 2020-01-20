@@ -365,7 +365,7 @@ function fillInAddress (){
 
     var Lat = place.geometry.location.lat();
     var Lng = place.geometry.location.lng();
-    var LatLng = Lat + "," + Lng;
+    var LatLng = Lat + ", " + Lng;
 
 
     console.log(place);
