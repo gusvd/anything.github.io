@@ -359,22 +359,22 @@ function fillInAddress (){
     var country = filtered_array.length ? filtered_array[0].short_name : "";
 
     // Classify continent based on ContinentsTable array
-    var continent = continentsTable[country] || "Not defined";
+    var locationGroup = continentsTable[country] || "Not defined";
 
     //Get LatLong
 
-    var Lat = place.geometry.location.lat();
-    var Lng = place.geometry.location.lng();
-    var LatLng = Lat + ", " + Lng;
+    var lat = place.geometry.location.lat();
+    var lng = place.geometry.location.lng();
+    var latLng = lat + ", " + lng;
 
 
     console.log(place);
     console.log(country);
-    console.log(continent);
+    console.log(locationGroup);
     console.log(LatLng);
 
     document.getElementById('departure-country').value = country; 
-    document.getElementById('continent').value = continent;
-    document.getElementById('LongLat').value = LatLng;    
+    document.getElementById('location-group').value = locationGroup;
+    document.getElementById('latlng').value = latLng;    
     
 };
