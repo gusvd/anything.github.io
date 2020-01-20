@@ -361,6 +361,12 @@ function fillInAddress (){
     // Classify continent based on ContinentsTable array
     var continent = continentsTable[country] || "Not defined";
 
+    //Get LatLong
+
+    var Lat = place.geometry.location.lat();
+    var Lng = place.geometry.location.lng();
+    var LatLng = Lat + "," + Lng;
+
 
     console.log(place);
     console.log(country);
