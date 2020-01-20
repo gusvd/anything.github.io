@@ -334,7 +334,7 @@ function initAutocomplete() {
     var options = {
         // fields: ["ALL"]
         // fields: ["address_components", "place_id"]
-        fields: ["address_components"]
+        fields: ["address_components", "geometry"]
     };
 
     autocomplete = new google.maps.places.Autocomplete(input, options);
@@ -365,10 +365,10 @@ function fillInAddress (){
     console.log(place);
     console.log(country);
     console.log(continent);
-    console.log(LongLat);
+    console.log(LatLng);
 
     document.getElementById('departure-country').value = country; 
     document.getElementById('continent').value = continent;
-    document.getElementById('LongLat').value = LongLat;    
+    document.getElementById('LongLat').value = LatLng;    
     
 };
