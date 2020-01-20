@@ -27,7 +27,6 @@ Webflow.push(function() {
     var CMSexpensesCommute = script_tag.getAttribute("CMSexpensesCommute");
     var CMSdepartureDate = script_tag.getAttribute("CMSdepartureDate");
     var CMSmemberstackID = script_tag.getAttribute("CMSmemberstackID");
-    var CMSuserID = script_tag.getAttribute("CMSuserID");
     var CMSlocationGroup = script_tag.getAttribute("CMSlocationGroup");
     var CMSdepartureCountry = script_tag.getAttribute("CMSdepartureCountry");
     var CMSlatLng = script_tag.getAttribute("CMSlatLng");
@@ -65,9 +64,9 @@ Webflow.push(function() {
             };
    
             ////////////////////////////////////////
-            // Check if the logged in user (memberstacl ID) is the listing owner (webflow user id)
+            // Check if the logged in user (memberstacl ID) is the listing owner (memberstack-id from CMS)
 
-            if (LoggedUserID == CMSuserID) {
+            if (LoggedUserID == CMSmemberstackID) {
 
                 // Show/hide relevant section
                 $('#view-listing-section').hide();
