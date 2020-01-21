@@ -30,6 +30,7 @@ Webflow.push(function() {
     var CMSlocationGroup = script_tag.getAttribute("CMSlocationGroup");
     var CMSdepartureCountry = script_tag.getAttribute("CMSdepartureCountry");
     var CMSlatLng = script_tag.getAttribute("CMSlatLng");
+    var CMSuploadcareURL = script_tag.getAttribute("CMSuploadcareURL");
 
 
 
@@ -139,7 +140,7 @@ Webflow.push(function() {
                 // Pre-fill form
                 document.getElementById('title').value = htmlDecode(CMStitle);
                 document.getElementById('description').value = htmlDecode(CMSdescription);
-                document.getElementById('listing-image').value = CMSlistingImage;
+                document.getElementById('listing-image').value = CMSuploadcareURL;
                 document.getElementById('departure-location').value = CMSdepartureLocation;
                 document.getElementById('departure-country').value = CMSdepartureCountry;
                 document.getElementById('destination').value = htmlDecode(CMSdestination);
