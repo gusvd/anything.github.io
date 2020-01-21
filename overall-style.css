@@ -13,6 +13,10 @@
   background-color: #5882e7;
 }
 
+.input-field .uploadcare {
+  display:none;
+}
+
 
 /*////////// Form and validation styling //////////
 
