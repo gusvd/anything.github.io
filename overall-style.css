@@ -1,13 +1,20 @@
-  /* Truncate text to the width of the text field */
-  .truncate { white-space: nowrap; text-overflow: ellipsis; }
 
-  #user-listings-container{ display:none; } /* hide the listing container on the User page */
-  #edit-listing-section{ display:none; } /* hide the form to edit listing on the Collection Template */
+/*////////// Truncate text to the width of the text field ///////////////*/
+.truncate { white-space: nowrap; text-overflow: ellipsis; }
+
+/*////////// Hide elements that need to be hidden by default ///////////////*/
+#user-listings-container{ display:none; } /* hide the listing container on the User page */
+#edit-listing-section{ display:none; } /* hide the form to edit listing on the Collection Template */
 
 
 
-/* /////////////////////////////////// */
-/* Form and validation styling */
+/*////////// Uploadcare ///////////////*/
+.uploader-button .uploadcare--widget__button_type_open {
+  background-color: #5882e7;
+}
+
+
+/*////////// Form and validation styling //////////
 
 /* Form multi-step hide sections at the beggining */
 .form-section {
