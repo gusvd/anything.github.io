@@ -20,7 +20,7 @@ var filterFns = {
   // show if number is greater than 50
   filterEurope: function() {
     var location = $(this).find('.location-group').text().toLowerCase();
-    var locationIndex - location.indexOf('Europe');
+    var locationIndex = location.indexOf('Europe');
     return locationIndex > 0
   },
   // show if name ends with -ium
