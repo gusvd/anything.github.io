@@ -30,9 +30,10 @@ var filterFns = {
   }
 };
 
-// bind filter button click
-$('.filters-button-group').on( 'click', 'button', function() {
-  var filterValue = $( this ).attr('data-filter');
+// bind filter on select change
+$('.filter-location').on( 'change', function() {
+  // get filter value from option value
+  var filterValue = this.value;
   // use filterFn if matches value
   filterValue = filterFns[ filterValue ] || filterValue;
   $grid.isotope({ filter: filterValue });
