@@ -49,6 +49,9 @@ var config = {
     controls: {
         toggleDefault: 'none'
     },
+    multifilter: {
+        enable: true // enable the multifilter extension for the mixer
+    }
 };
 
 
