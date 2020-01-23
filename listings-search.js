@@ -1,40 +1,23 @@
 
 ////////////////////////////////////////////////////
-// Initialize Isotype
+// Initialize MixItUp
 
-// var elem = document.querySelector('.listings-container');
-// var iso = new Isotope( elem, {
-//   // options
-//   itemSelector: '.listings-card',
-//   layoutMode: 'fitRows'
-// });
+var containerEl = document.querySelector('.listings-container');
 
-$('.listings-container').isotope({
-  // options
-  itemSelector: '.listings-card',
-  layoutMode: 'fitRows'
-});
-
-// filter functions
-var filterFns = {
-  // show if number is greater than 50
-  filterEurope: function() {
-    var location = $(this).find('.location-group').text().toLowerCase();
-    var locationIndex = location.indexOf('Europe');
-    return locationIndex > 0
-  },
-  // show if name ends with -ium
-  ium: function() {
-    var name = $(this).find('.name').text();
-    return name.match( /ium$/ );
-  }
+var config = {
+    animation: {
+        duration: 300
+    },
+    selectors: {
+        target: '.listings-card'
+        //target: '[data-ref="mix"]' targeting using data- attributes
+    },
+    load: {
+        filter: 'Europe' ////////// CHANGE THIS TO REFLECT THE RIGHT FILTER BASED ON URL
+    },
+    sort: 'default:asc', /////// SORT BY DATE
+    toggleDefault: 'none'
 };
 
-// bind filter on select change
-$('.filter-location').on( 'change', function() {
-  // get filter value from option value
-  var filterValue = this.value;
-  // use filterFn if matches value
-  filterValue = filterFns[ filterValue ] || filterValue;
-  $grid.isotope({ filter: filterValue });
-});
+
+var mixer = mixitup(containerEl, config);
