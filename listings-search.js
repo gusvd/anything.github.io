@@ -131,7 +131,7 @@ $(function(){
       
   // Instantiate MixItUp
       
-  $('listings-container').mixItUp({
+  $('.listings-container').mixItUp({
     animation: {
         duration: 300
     },
