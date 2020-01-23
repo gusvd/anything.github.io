@@ -15,7 +15,7 @@ var config = {
     load: {
         filter: 'Europe' ////////// CHANGE THIS TO REFLECT THE RIGHT FILTER BASED ON URL
     },
-    sort: 'default:asc', /////// SORT BY DATE
+    //sort: 'default:asc', /////// SORT BY DATE
     toggleDefault: 'none'
 };
 
