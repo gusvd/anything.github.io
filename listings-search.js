@@ -161,4 +161,5 @@ var config = {
 var mixer = mixitup(containerEl, config);
       
 
-// }); // close webflow wraper
+// }); close webflow wraper
+
