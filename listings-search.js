@@ -21,21 +21,113 @@
  });
 
 
+ /// Logic for dropdown
 
-////////////////////////////////////////////////////
-// Initialize MixItUp
+ // To keep our code clean and modular, all custom functionality will be contained inside a single object literal called "dropdownFilter".
 
-var containerEl = document.querySelector('.listings-container');
-
-// Get initial filter from URL
-var initialFilter = 'none';
-var hash = window.location.hash.replace(/^#/g, '');
-
-if (hash) {
-    initialFilter = '.' + hash;
+var dropdownFilter = {
+  
+  // Declare any variables we will need as properties of the object
+  
+  $filters: null,
+  $contribution: null,
+  groups: [],
+  outputArray: [],
+  outputString: '',
+  
+  // The "init" method will run on document ready and cache any jQuery objects we will need.
+  
+  init: function(){
+    var self = this; // As a best practice, in each method we will asign "this" to the variable "self" so that it remains scope-agnostic. We will use it to refer to the parent "dropdownFilter" object so that we can share methods and properties between all parts of the object.
+    
+    self.$filters = $('#filters');
+    self.$contribution = $('#contribution');
+    self.$container = $('#listings-container');
+    
+    self.$filters.find('.fieldset').each(function(){
+      self.groups.push({
+        $dropdown: $(this).find('select'),
+        active: ''
+      });
+    });
+    
+    self.bindHandlers();
+  },
+  
+  // The "bindHandlers" method will listen for whenever a select is changed. 
+  
+  bindHandlers: function(){
+    var self = this;
+    
+    // Handle select change
+    
+    self.$filters.on('change', 'select', function(e){
+      e.preventDefault();
+      
+      self.parseFilters();
+    });
+    
+    // Handle contribution check box
+    
+    self.$contribution.on('click', function(e){
+      e.preventDefault();
+      
+      self.parseFilters();
+    });
+  },
+  
+  // The parseFilters method pulls the value of each active select option
+  
+  parseFilters: function(){
+    var self = this;
+ 
+    // loop through each filter group and grap the value from each one.
+    
+    for(var i = 0, group; group = self.groups[i]; i++){
+      group.active = group.$dropdown.val();
+    }
+    
+    self.concatenate();
+  },
+  
+  // The "concatenate" method will crawl through each group, concatenating filters as desired:
+  
+  concatenate: function(){
+    var self = this;
+    
+    self.outputString = ''; // Reset output string
+    
+    for(var i = 0, group; group = self.groups[i]; i++){
+      self.outputString += group.active;
+    }
+    
+    // If the output string is empty, show all rather than none:
+    
+    !self.outputString.length && (self.outputString = 'all'); 
+    
+    console.log(self.outputString); 
+    
+    // ^ we can check the console here to take a look at the filter string that is produced
+    
+    // Send the output string to MixItUp via the 'filter' method:
+    
+    if(self.$container.mixItUp('isLoaded')){
+      self.$container.mixItUp('filter', self.outputString);
+    }
+  }
 };
+  
+// On document ready, initialise our code.
 
-var config = {
+$(function(){
+      
+  // Initialize dropdownFilter code
+      
+  dropdownFilter.init();
+      
+  // Instantiate MixItUp
+      
+  $('#listings-container').mixItUp({
     animation: {
         duration: 300
     },
@@ -47,9 +139,12 @@ var config = {
         sort: 'default:asc' 
     },
     controls: {
-        toggleDefault: 'none'
+        enable: false // we won't be needing these
     },
-};
-
-
-var mixer = mixitup(containerEl, config);
+    callbacks: {
+      onMixFail: function(){
+        alert('No items were found matching the selected filters.');
+      }
+    }
+  });    
+});
