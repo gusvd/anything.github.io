@@ -121,35 +121,35 @@ var dropdownFilter = {
 $(function(){
       
   // Initialize dropdownFilter code
-      
+        
   dropdownFilter.init();
-      
+        
+  ////////////////////////////////////////////////////
+  // Initialize MixItUp
 
+  var containerEl = document.querySelector('.listings-container');
 
-////////////////////////////////////////////////////
-// Initialize MixItUp
-
-var containerEl = document.querySelector('.listings-container');
-
-var config = {
-    animation: {
-    duration: 300
-    },
-    selectors: {
-        target: '.listings-card'
-    },
-    load: {
-        filter: '.Europe', ////////// CHANGE THIS TO REFLECT THE RIGHT FILTER BASED ON URL
-        sort: 'default:asc' 
-    },
-    controls: {
-        enable: false // we won't be needing these
-    },
-    callbacks: {
-      onMixFail: function(){
-        alert('No items were found matching the selected filters.');
+  var config = {
+      animation: {
+      duration: 300
+      },
+      selectors: {
+          target: '.listings-card'
+      },
+      load: {
+          filter: '.Europe', ////////// CHANGE THIS TO REFLECT THE RIGHT FILTER BASED ON URL
+          sort: 'default:asc' 
+      },
+      controls: {
+          enable: false // we won't be needing these
+      },
+      callbacks: {
+        onMixFail: function(){
+          alert('No items were found matching the selected filters.');
+        }
       }
-    }
-};
+  }
 
-var mixer = mixitup(containerEl, config);
+  var mixer = mixitup(containerEl, config);
+  
+});
