@@ -11,11 +11,12 @@
     }
     var conv = text.replace(/[!\"#$%&'\(\)\*\+,\.\/:;<=>\?\@\[\\\]\^`\{\|\}~]/g, '');
     var className = conv.replace (/ /g, "-")
-                        .toLowerCase()
-                        .trim();
+      .toLowerCase()
+      .trim();
     if (!isNaN(parseInt(className.charAt(0), 10))) {
-              className = ("_" + className);
-            }
+      className = ("_" + className);
+    }
+    className - "filter" + className;
     elem.parentElement.classList.add(className);
  
  });
