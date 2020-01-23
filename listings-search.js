@@ -1,8 +1,3 @@
-
-// var Webflow = Webflow || [];
-// Webflow.push(function() {
-
-
 ////////////////////////////////////////////////////
 // Creating dynamic elements classes:
 
@@ -137,8 +132,8 @@ $(function(){
 var containerEl = document.querySelector('.listings-container');
 
 var config = {
-        animation: {
-        duration: 300
+    animation: {
+    duration: 300
     },
     selectors: {
         target: '.listings-card'
@@ -157,9 +152,4 @@ var config = {
     }
 };
 
-
 var mixer = mixitup(containerEl, config);
-      
-
-// }); close webflow wraper
-
