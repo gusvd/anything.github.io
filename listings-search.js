@@ -16,7 +16,6 @@
     if (!isNaN(parseInt(className.charAt(0), 10))) {
       className = ("_" + className);
     }
-    className - "filter" + className;
     elem.parentElement.classList.add(className);
  
  });
