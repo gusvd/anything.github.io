@@ -2,7 +2,7 @@
 ////////////////////////////////////////////////////
 // Creating dynamic elements classes:
 
- var locationArray = document.querySelectorAll('.LocationGroup');
+ var locationArray = document.querySelectorAll('.locationgroup');
  
  locationArray.forEach( function(elem) {
     var text = elem.innerText || elem.innerContent;
