@@ -1,6 +1,6 @@
 
-var Webflow = Webflow || [];
-Webflow.push(function() {
+// var Webflow = Webflow || [];
+// Webflow.push(function() {
 
 
 ////////////////////////////////////////////////////
@@ -131,7 +131,7 @@ $(function(){
       
   // Instantiate MixItUp
       
-  $('.listings-container').mixItUp({
+  $('#listings-container').mixItUp({
     animation: {
         duration: 300
     },
@@ -153,4 +153,4 @@ $(function(){
   });    
 });
 
-}); // close webflow wraper
+// }); // close webflow wraper
