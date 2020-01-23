@@ -5,6 +5,7 @@
 var containerEl = document.querySelector('.listings-container');
 
 var config = {
+    toggleDefault: 'none',
     animation: {
         duration: 300
     },
@@ -16,7 +17,6 @@ var config = {
         filter: 'Europe' ////////// CHANGE THIS TO REFLECT THE RIGHT FILTER BASED ON URL
     },
     //sort: 'default:asc', /////// SORT BY DATE
-    //toggleDefault: 'none'
 };
 
 
