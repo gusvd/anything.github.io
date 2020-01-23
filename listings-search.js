@@ -5,7 +5,6 @@
 var containerEl = document.querySelector('.listings-container');
 
 var config = {
-    toggleDefault: 'all',
     animation: {
         duration: 300
     },
