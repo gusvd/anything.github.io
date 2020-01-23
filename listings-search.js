@@ -1,4 +1,8 @@
 
+var Webflow = Webflow || [];
+Webflow.push(function() {
+
+
 ////////////////////////////////////////////////////
 // Creating dynamic elements classes:
 
@@ -148,3 +152,5 @@ $(function(){
     }
   });    
 });
+
+}); // close webflow wraper
