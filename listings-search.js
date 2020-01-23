@@ -12,9 +12,12 @@ var config = {
         target: '.listings-card'
     },
     load: {
-        filter: '.Europe' ////////// CHANGE THIS TO REFLECT THE RIGHT FILTER BASED ON URL
+        filter: '.Europe', ////////// CHANGE THIS TO REFLECT THE RIGHT FILTER BASED ON URL
+        sort: 'default:asc' 
     },
-    //sort: 'default:asc', /////// SORT BY DATE
+    controls: {
+        toggleDefault: 'none'
+    },
 };
 
 
