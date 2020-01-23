@@ -129,10 +129,15 @@ $(function(){
       
   dropdownFilter.init();
       
-  // Instantiate MixItUp
-      
-  $('#listings-container').mixItUp({
-    animation: {
+
+
+////////////////////////////////////////////////////
+// Initialize MixItUp
+
+var containerEl = document.querySelector('.listings-container');
+
+var config = {
+        animation: {
         duration: 300
     },
     selectors: {
@@ -150,7 +155,10 @@ $(function(){
         alert('No items were found matching the selected filters.');
       }
     }
-  });    
-});
+};
+
+
+var mixer = mixitup(containerEl, config);
+      
 
 // }); // close webflow wraper
