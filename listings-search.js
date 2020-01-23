@@ -16,7 +16,7 @@ var config = {
         filter: 'Europe' ////////// CHANGE THIS TO REFLECT THE RIGHT FILTER BASED ON URL
     },
     //sort: 'default:asc', /////// SORT BY DATE
-    toggleDefault: 'none'
+    //toggleDefault: 'none'
 };
 
 
