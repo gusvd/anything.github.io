@@ -1,3 +1,6 @@
+var Webflow = Webflow || [];
+Webflow.push(function () {
+
 
 ////////////////////////////////////////////////////
 // Creating dynamic elements classes and attributes:
@@ -37,9 +40,7 @@ textToClass(document.querySelectorAll('.departuredatesort'), 'data');
 
 
 ////////////////////////////////////////////////////
-// Initialize MixItUp
-
-var containerEl = document.querySelector('.listings-container');
+// MixItUp
 
 // Get initial filter from URL
 var initialFilter = 'none';
@@ -49,6 +50,8 @@ if (hash) {
     initialFilter = '.' + hash;
 };
 
+// Initialize MixItUp
+var containerEl = document.querySelector('.listings-container');
 var config = {
     animation: {
         duration: 300
@@ -67,6 +70,6 @@ var config = {
         enable: true // enable the multifilter extension for the mixer
     }
 };
-
-
 var mixer = mixitup(containerEl, config);
+
+}); // close webflow wraper
