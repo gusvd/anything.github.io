@@ -30,9 +30,9 @@
      });
 };
 
-textToClass(document.querySelectorAll('.locationgroup', 'class'));
-textToClass(document.querySelectorAll('.departuredategroup', 'class'));
-textToClass(document.querySelectorAll('.departuredatesort', 'data'));
+textToClass(document.querySelectorAll('.locationgroup'), 'class');
+textToClass(document.querySelectorAll('.departuredategroup'), 'class');
+textToClass(document.querySelectorAll('.departuredatesort'), 'data');
 
 
 
