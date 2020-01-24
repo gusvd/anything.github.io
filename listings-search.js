@@ -57,7 +57,7 @@ var config = {
         target: '.listings-card'
     },
     load: {
-        filter: 'all',
+        filter: 'none',
         sort: 'departure-date:asc' 
     },
     controls: {
