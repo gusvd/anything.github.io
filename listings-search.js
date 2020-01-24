@@ -9,15 +9,19 @@
     if (!text) { 
       var text = 'empty';
     }
-    //var conv = text.replace(/[!\"#$%&'\(\)\*\+,\.\/:;<=>\?\@\[\\\]\^`\{\|\}~]/g, '');
-    var conv = text.replace(/[!\"#$%&'\(\)\*\+\.\/:;<=>\?\@\[\\\]\^`\{\|\}~]/g, '');
-    var className = conv.replace (/ /g, "-")
-      .toLowerCase()
-      .trim();
-    if (!isNaN(parseInt(className.charAt(0), 10))) {
-      className = ("_" + className);
+    var conv = text.replace(/[!\"#$%&'\(\)\*\+,\.\/:;<=>\?\@\[\\\]\^`\{\|\}~]/g, '');
+    
+    var classes = conv.split("-");
+
+    classes.forEach( function(c) {
+        var className = c.replace (/ /g, "-")
+          .toLowerCase()
+          .trim();
+        if (!isNaN(parseInt(className.charAt(0), 10))) {
+          className = ("_" + className);
+        }
+        elem.parentElement.classList.add(className);
     }
-    elem.parentElement.classList.add(className);
  
  });
 
