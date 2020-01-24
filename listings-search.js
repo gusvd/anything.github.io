@@ -61,7 +61,7 @@ var config = {
         sort: 'departure-date:asc' 
     },
     controls: {
-        toggleDefault: 'all'
+        toggleDefault: 'none'
     },
     multifilter: {
         enable: true // enable the multifilter extension for the mixer
