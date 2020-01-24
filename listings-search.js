@@ -57,7 +57,7 @@ var config = {
         target: '.listings-card'
     },
     load: {
-        filter: '.Europe',
+        filter: 'all',
         sort: 'data-departure-date:asc' 
     },
     controls: {
