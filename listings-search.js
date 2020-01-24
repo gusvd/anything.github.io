@@ -46,9 +46,9 @@ textToClass(document.querySelectorAll('.departuredatesort'), 'data');
 var searchLocation = getParameterByName('search-location');
 var searchDate = getParameterByName('search-date');
 
-initialFilter = "." + searchLocation + " " + "." searchDate
+var initialFilter = "." + searchLocation + " " + "." searchDate;
 
-console.log(initialFilter)
+console.log(initialFilter);
 
 // Initialize MixItUp
 var containerEl = document.querySelector('.listings-container');
