@@ -58,7 +58,7 @@ var config = {
     },
     load: {
         filter: 'all',
-        sort: 'data-departure-date:asc' 
+        sort: 'departure-date:asc' 
     },
     controls: {
         toggleDefault: 'none'
