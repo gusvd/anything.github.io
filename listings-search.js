@@ -2,28 +2,34 @@
 ////////////////////////////////////////////////////
 // Creating dynamic elements classes:
 
- var locationArray = document.querySelectorAll('.locationgroup');
- 
- locationArray.forEach( function(elem) {
-    var text = elem.innerText || elem.innerContent;
-    if (!text) { 
-      var text = 'empty';
-    }
-    var conv = text.replace(/[!\"#$%&'\(\)\*\+,\.\/:;<=>\?\@\[\\\]\^`\{\|\}~]/g, '');
-    
-    var classes = conv.split("-");
-
-    classes.forEach( function(c) {
-        var className = c.replace (/ /g, "-")
-          .toLowerCase()
-          .trim();
-        if (!isNaN(parseInt(className.charAt(0), 10))) {
-          className = ("_" + className);
+ function textToClass(locationArray) {
+     // body...
+     locationArray.forEach( function(elem) {
+        var text = elem.innerText || elem.innerContent;
+        if (!text) { 
+          var text = 'empty';
         }
-        elem.parentElement.classList.add(className);
-    });
- 
- });
+
+        // var conv = text.replace(/[!\"#$%&'\(\)\*\+,\.\/:;<=>\?\@\[\\\]\^`\{\|\}~]/g, '');
+        var conv = text.replace(/[!\"#$%&'\(\)\*\+\.\/:;<=>\?\@\[\\\]\^`\{\|\}~]/g, ''); // removed comma to split
+
+        var classes = conv.split(",");
+
+        classes.forEach( function(c) {
+            var className = c.replace (/ /g, "-")
+              .toLowerCase()
+              .trim();
+            if (!isNaN(parseInt(className.charAt(0), 10))) {
+              className = ("_" + className);
+            }
+            elem.parentElement.classList.add(className);
+        });
+     
+     });
+};
+
+textToClass(document.querySelectorAll('.locationgroup'));
+textToClass(document.querySelectorAll('.departuredate'));
 
 
 
