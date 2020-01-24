@@ -9,7 +9,8 @@
     if (!text) { 
       var text = 'empty';
     }
-    var conv = text.replace(/[!\"#$%&'\(\)\*\+,\.\/:;<=>\?\@\[\\\]\^`\{\|\}~]/g, '');
+    //var conv = text.replace(/[!\"#$%&'\(\)\*\+,\.\/:;<=>\?\@\[\\\]\^`\{\|\}~]/g, '');
+    var conv = text.replace(/[!\"#$%&'\(\)\*\+\.\/:;<=>\?\@\[\\\]\^`\{\|\}~]/g, '');
     var className = conv.replace (/ /g, "-")
       .toLowerCase()
       .trim();
