@@ -1,6 +1,3 @@
-var Webflow = Webflow || [];
-Webflow.push(function () {
-
 
 ////////////////////////////////////////////////////
 // Creating dynamic elements classes and attributes:
@@ -71,5 +68,3 @@ var config = {
     }
 };
 var mixer = mixitup(containerEl, config);
-
-}); // close webflow wraper
