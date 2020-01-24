@@ -2,7 +2,7 @@
 ////////////////////////////////////////////////////
 // Creating dynamic elements classes and attributes:
 
- function textToClass(locationArray,attr) {
+ function textToClass(locationArray, tag) {
      locationArray.forEach( function(elem) {
         var text = elem.innerText || elem.innerContent;
         if (!text) { 
@@ -15,7 +15,7 @@
               .toLowerCase()
               .trim();
 
-        if (attr=="class"){
+        if (tag=="class"){
             var classes = conv.split(",");
             classes.forEach( function(className) {
                 if (!isNaN(parseInt(className.charAt(0), 10))) {
@@ -23,7 +23,7 @@
                     }
                     elem.parentElement.classList.add(className);
                 });
-        } else if (attr=="data") {
+        } else if (tag=="data") {
             elem.parentElement.setAttribute("data-departure-date", conv);
         }
      
