@@ -21,7 +21,7 @@
           className = ("_" + className);
         }
         elem.parentElement.classList.add(className);
-    }
+    });
  
  });
 
