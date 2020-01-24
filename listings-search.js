@@ -57,8 +57,8 @@ var config = {
         target: '.listings-card'
     },
     load: {
-        filter: '.Europe', ////////// CHANGE THIS TO REFLECT THE RIGHT FILTER BASED ON URL
-        sort: 'default:asc' 
+        filter: '.Europe',
+        sort: 'data-departure-date:asc' 
     },
     controls: {
         toggleDefault: 'none'
