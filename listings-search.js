@@ -46,7 +46,7 @@ textToClass(document.querySelectorAll('.departuredatesort'), 'data');
 var searchLocation = getParameterByName('search-location');
 var searchDate = getParameterByName('search-date');
 
-var initialFilter = "." + searchLocation + " " + "." + searchDate;
+var initialFilter = "." + searchLocation + ", " + "." + searchDate;
 
 console.log(initialFilter);
 
@@ -60,7 +60,7 @@ var config = {
         target: '.listings-card'
     },
     load: {
-        filter: '.europe, .mar-2020',
+        filter: initialFilter,
         sort: 'departure-date:asc' 
     },
     controls: {
