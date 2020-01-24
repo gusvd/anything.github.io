@@ -1,9 +1,8 @@
 
 ////////////////////////////////////////////////////
-// Creating dynamic elements classes:
+// Creating dynamic elements classes and attributes:
 
- function textToClass(locationArray) {
-     // body...
+ function textToClass(locationArray,attr) {
      locationArray.forEach( function(elem) {
         var text = elem.innerText || elem.innerContent;
         if (!text) { 
@@ -12,24 +11,28 @@
 
         // var conv = text.replace(/[!\"#$%&'\(\)\*\+,\.\/:;<=>\?\@\[\\\]\^`\{\|\}~]/g, '');
         var conv = text.replace(/[!\"#$%&'\(\)\*\+\.\/:;<=>\?\@\[\\\]\^`\{\|\}~]/g, ''); // removed comma to split
-
-        var classes = conv.split(",");
-
-        classes.forEach( function(c) {
-            var className = c.replace (/ /g, "-")
+        var conv = conv.replace (/ /g, "-")
               .toLowerCase()
               .trim();
-            if (!isNaN(parseInt(className.charAt(0), 10))) {
-              className = ("_" + className);
-            }
-            elem.parentElement.classList.add(className);
-        });
+
+        if (attr=="class"){
+            var classes = conv.split(",");
+            classes.forEach( function(className) {
+                if (!isNaN(parseInt(className.charAt(0), 10))) {
+                      className = ("_" + className);
+                    }
+                    elem.parentElement.classList.add(className);
+                });
+        } else if (attr=="data") {
+            elem.parentElement.setAttribute("data-departure-date", conv);
+        }
      
      });
 };
 
-textToClass(document.querySelectorAll('.locationgroup'));
-textToClass(document.querySelectorAll('.departuredate'));
+textToClass(document.querySelectorAll('.locationgroup', 'class'));
+textToClass(document.querySelectorAll('.departuredategroup', 'class'));
+textToClass(document.querySelectorAll('.departuredatesort', 'data'));
 
 
 
