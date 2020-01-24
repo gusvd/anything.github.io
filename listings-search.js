@@ -43,12 +43,12 @@ textToClass(document.querySelectorAll('.departuredatesort'), 'data');
 // MixItUp
 
 // Get initial filter from URL
-var initialFilter = 'none';
-var hash = window.location.hash.replace(/^#/g, '');
+var searchLocation = getParameterByName('search-location');
+var searchDate = getParameterByName('search-date');
 
-if (hash) {
-    initialFilter = '.' + hash;
-};
+initialFilter = "." + searchLocation + " " + "." searchDate
+
+console.log(initialFilter)
 
 // Initialize MixItUp
 var containerEl = document.querySelector('.listings-container');
@@ -60,7 +60,7 @@ var config = {
         target: '.listings-card'
     },
     load: {
-        filter: 'none',
+        filter: initialFilter,
         sort: 'departure-date:asc' 
     },
     controls: {
