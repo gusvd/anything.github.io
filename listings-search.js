@@ -39,6 +39,19 @@ textToClass(document.querySelectorAll('.departuredatesort'), 'data');
 ////////////////////////////////////////////////////
 // MixItUp
 
+// Initial Filtering
+
+// Get initial filter from URL
+var searchLocation = "." + getParameterByName('search-location');
+var searchDate = "." + getParameterByName('search-date');
+
+var initFilter = searchLocation + searchDate;
+
+console.log(searchLocation);
+console.log(searchDate);
+console.log(initFilter);
+
+
 // Initialize MixItUp
 var containerEl = document.querySelector('.listings-container');
 var config = {
@@ -49,6 +62,7 @@ var config = {
         target: '.listings-card'
     },
     load: {
+        filter: initFilter,
         sort: 'departure-date:asc' 
     },
     controls: {
@@ -60,25 +74,17 @@ var config = {
 };
 var mixer = mixitup(containerEl, config);
 
-// Initial Filtering
 
-// Get initial filter from URL
-var searchLocation = "." + getParameterByName('search-location');
-var searchDate = "." + getParameterByName('search-date');
+// // Pass initial filters to MixitUp / enable animations
 
-console.log(searchLocation);
-console.log(searchDate);
+// mixer.setFilterGroupSelectors('filter-location', searchLocation);
+// mixer.setFilterGroupSelectors('filter-date', searchDate);
 
-// Pass initial filters to MixitUp / enable animations
+// mixer.parseFilterGroups();
 
-mixer.setFilterGroupSelectors('filter-location', searchLocation);
-mixer.setFilterGroupSelectors('filter-date', searchDate);
-
-mixer.parseFilterGroups();
-
-mixer.configure({
-    animation: {
-        enable: true,
-        duration: 300
-    }
-});
+// mixer.configure({
+//     animation: {
+//         enable: true,
+//         duration: 300
+//     }
+// });
