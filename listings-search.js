@@ -62,7 +62,7 @@ var config = {
         target: '.listings-card'
     },
     load: {
-        filter: none,
+        filter: 'none',
         sort: 'departure-date:asc' 
     },
     controls: {
