@@ -62,8 +62,7 @@ var config = {
         target: '.listings-card'
     },
     load: {
-        //filter: initFilter,
-        filter: 'europe.mar-2020',
+        filter: initFilter,
         sort: 'departure-date:asc' 
     },
     controls: {
