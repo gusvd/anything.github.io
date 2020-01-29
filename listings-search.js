@@ -62,7 +62,7 @@ var config = {
         target: '.listings-card'
     },
     load: {
-        filter: 'none',
+        filter: initFilter,
         sort: 'departure-date:asc' 
     },
     controls: {
@@ -75,12 +75,12 @@ var config = {
 var mixer = mixitup(containerEl, config);
 
 
-// // Pass initial filters to MixitUp / enable animations
+// // Pass initial filters to Select inputs
 
 mixer.setFilterGroupSelectors('location', searchLocation);
 mixer.setFilterGroupSelectors('date', searchDate);
 
- mixer.parseFilterGroups();
+// mixer.parseFilterGroups();
 
 // mixer.configure({
 //     animation: {
