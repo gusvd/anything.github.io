@@ -56,7 +56,7 @@ console.log(initFilter);
 var containerEl = document.querySelector('.listings-container');
 var config = {
     animation: {
-        duration: 300 // disable animation, they will be enabled after the initial filtering
+        duration: 300
     },
     selectors: {
         target: '.listings-card'
@@ -77,8 +77,8 @@ var mixer = mixitup(containerEl, config);
 
 // // Pass initial filters to MixitUp / enable animations
 
-// mixer.setFilterGroupSelectors('filter-location', searchLocation);
-// mixer.setFilterGroupSelectors('filter-date', searchDate);
+ mixer.setFilterGroupSelectors('location', searchLocation);
+ mixer.setFilterGroupSelectors('date', searchDate);
 
 // mixer.parseFilterGroups();
 
