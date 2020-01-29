@@ -77,8 +77,8 @@ var mixer = mixitup(containerEl, config);
 
 // // Pass initial filters to MixitUp / enable animations
 
- mixer.setFilterGroupSelectors('location', searchLocation);
- mixer.setFilterGroupSelectors('date', searchDate);
+ "mixer.setFilterGroupSelectors('location', searchLocation);"
+" mixer.setFilterGroupSelectors('date', 'searchDate');"
 
  mixer.parseFilterGroups();
 
