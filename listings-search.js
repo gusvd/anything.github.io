@@ -79,7 +79,7 @@ mixer.parseFilterGroups();
 
 mixer.configure({
     animation: {
-        enable: true
+        enable: true,
         duration: 300
     }
 });
