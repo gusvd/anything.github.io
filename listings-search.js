@@ -66,9 +66,8 @@ var mixer = mixitup(containerEl, config);
 var searchLocation = "." + getParameterByName('search-location');
 var searchDate = "." + getParameterByName('search-date');
 
-var initialFilter = "." + searchLocation + ", " + "." + searchDate;
-
-console.log(initialFilter);
+console.log(searchLocation);
+console.log(searchDate);
 
 // Pass initial filters to MixitUp / enable animations
 
