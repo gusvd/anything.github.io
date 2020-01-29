@@ -56,7 +56,7 @@ console.log(initFilter);
 var containerEl = document.querySelector('.listings-container');
 var config = {
     animation: {
-        enable: false // disable animation, they will be enabled after the initial filtering
+        duration: 300 // disable animation, they will be enabled after the initial filtering
     },
     selectors: {
         target: '.listings-card'
