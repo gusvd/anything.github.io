@@ -254,7 +254,7 @@ var nationalitites = [
   'Zimbabwean'
 ]
 
-fruits.forEach(function(e) {
+nationalitites.forEach(function(e) {
   console.log(e)
 })
 
