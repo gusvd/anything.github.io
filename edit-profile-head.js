@@ -255,7 +255,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     'Zimbabwean'
   ]
 
-  var select = document.getElementById('nationality');
+  var select = document.getElementById('nationality-datalist');
 
   nationalitites.forEach(function(e) {
     var opt = document.createElement('option');
