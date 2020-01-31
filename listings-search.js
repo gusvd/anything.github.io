@@ -43,7 +43,12 @@ textToClass(document.querySelectorAll('.departuredatesort'), 'data');
 
 // Get initial filter from URL
 var searchLocation = "." + getParameterByName('search-location');
-var searchDate = "." + getParameterByName('search-date');
+
+if (getParameterByName('search-date')) {
+    searchDate = "." + getParameterByName('search-date')
+} else {
+    searchDate = ""
+};
 
 var initFilter = searchLocation + searchDate;
 
