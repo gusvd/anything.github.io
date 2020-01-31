@@ -255,11 +255,12 @@ document.addEventListener('DOMContentLoaded', (event) => {
     'Zimbabwean'
   ]
 
-  var select = document.getElementById('nationalitites');
+  var select = document.getElementById('nationality');
 
   nationalitites.forEach(function(e) {
     var opt = document.createElement('option');
     opt.value = e.replace (/ /g, "-").toLowerCase().trim();
+    opt.innerHTML = e;
     select.appendChild(opt);
   })
 });
