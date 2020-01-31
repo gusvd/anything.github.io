@@ -259,7 +259,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
   nationalitites.forEach(function(e) {
     var opt = document.createElement('option');
-    opt.value = e;
+    opt.value = e.replace (/ /g, "-").toLowerCase().trim();
     opt.innerHTML = e;
     select.appendChild(opt);
   })
