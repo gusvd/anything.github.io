@@ -3,7 +3,7 @@ Webflow.push(function () {
 	MemberStack.onReady.then(function(member) {
 		if (member.loggedIn) {
 			LoggedUserID = member.id;
-			userProfilePicture = member.profile-picture;
+			userProfilePicture = member["profile-picture"];
 			console.log(userProfilePicture);
 			document.getElementById("navbar-profile").href="/users/" + LoggedUserID + "#user-profile";
 		  	document.getElementById("navbar-listings").href="/users/" + LoggedUserID;
