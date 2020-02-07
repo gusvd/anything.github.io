@@ -1,5 +1,4 @@
-var Webflow = Webflow || [];
-Webflow.push(function () {
+window.addEventListener('DOMContentLoaded', (event) => {
 	MemberStack.onReady.then(function(member) {
 		if (member.loggedIn) {
 			LoggedUserID = member.id;
@@ -14,7 +13,7 @@ Webflow.push(function () {
 			sessionStorage.setItem('LoggedUserID', null);
 		};
 	})
-});
+}); // end DOMContentLoaded
 
 function getParameterByName(name, url) {
     if (!url) url = window.location.href;

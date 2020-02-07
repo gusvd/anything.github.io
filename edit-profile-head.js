@@ -25,6 +25,7 @@ UPLOADCARE_LOCALE_TRANSLATIONS = {
 
 //////////////////////////////////////////////
 // Populate Nationality dropdown
+// And select the correct one during Edit Profile
 
 document.addEventListener('DOMContentLoaded', (event) => {
   var nationalitites = [
@@ -255,6 +256,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
     'Zimbabwean'
   ]
 
+  
+  window.addEventListener('DOMContentLoaded', (event) => {
+
   var select = document.getElementById('nationality');
 
   nationalitites.forEach(function(e) {
@@ -263,6 +267,16 @@ document.addEventListener('DOMContentLoaded', (event) => {
     opt.innerHTML = e;
     select.appendChild(opt);
   })
+
+    MemberStack.onReady.then(function(member) {
+        if (member.loggedIn) {
+            userNationality = member["nationality"];
+            document.getElementById("nationality").value= userNationality;
+        };
+    })
+
 });
+
+}); // end DOMContentLoaded
 
 
