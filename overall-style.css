@@ -5,6 +5,7 @@
 /*////////// Hide elements that need to be hidden by default ///////////////*/
 #user-listings-container{ display:none; } /* hide the listing container on the User page */
 #edit-listing-section{ display:none; } /* hide the form to edit listing on the Collection Template */
+#edit-profile-button{ display:none; } /* hide Edit profile button on User profile page */
 
 
 /*////////// Uploadcare ///////////////*/
