@@ -162,6 +162,9 @@ function syncMixerWithPreviousUiState(uiState, animate) {
     mixer.setFilterGroupSelectors('location', location.map(getSelectorFromValue));
     mixer.setFilterGroupSelectors('date', date.map(getSelectorFromValue));
 
+    console.log(location.map(getSelectorFromValue));
+    console.log(date.map(getSelectorFromValue));
+
     // Parse the filter groups (passing `false` will perform no animation)
 
     return mixer.parseFilterGroups(animate ? true : false);
