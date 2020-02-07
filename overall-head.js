@@ -7,7 +7,6 @@ window.addEventListener('DOMContentLoaded', (event) => {
 			document.getElementById("navbar-profile").href="/users/" + LoggedUserID + "#user-profile";
 		  	document.getElementById("navbar-listings").href="/users/" + LoggedUserID;
 		  	document.getElementById("navbar-profile-image").srcset= userProfilePicture;
-
 		  	sessionStorage.setItem('LoggedUserID', LoggedUserID);
 		} else {
 			sessionStorage.setItem('LoggedUserID', null);

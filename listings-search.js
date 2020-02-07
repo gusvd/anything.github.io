@@ -61,7 +61,7 @@ console.log(initFilter);
 var containerEl = document.querySelector('.listings-container');
 var config = {
     animation: {
-        duration: 300
+        enable: false
     },
     selectors: {
         target: '.listings-card'
@@ -85,11 +85,11 @@ var mixer = mixitup(containerEl, config);
 mixer.setFilterGroupSelectors('location', searchLocation);
 mixer.setFilterGroupSelectors('date', searchDate);
 
-// mixer.parseFilterGroups();
+mixer.parseFilterGroups();
 
-// mixer.configure({
-//     animation: {
-//         enable: true,
-//         duration: 300
-//     }
-// });
+mixer.configure({
+    animation: {
+        enable: true,
+        duration: 300
+    }
+});
