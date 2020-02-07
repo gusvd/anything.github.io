@@ -35,7 +35,6 @@ textToClass(document.querySelectorAll('.departuredategroup'), 'class');
 textToClass(document.querySelectorAll('.departuredatesort'), 'data');
 
 
-
 ////////////////////////////////////////////////////
 // MixItUp
 
