@@ -167,7 +167,7 @@ function syncMixerWithPreviousUiState(uiState, animate) {
 
     // Parse the filter groups (passing `false` will perform no animation)
 
-    return mixer.parseFilterGroups(animate ? true : false);
+    return mixer.parseFilterGroups();
 }
 
 /**
