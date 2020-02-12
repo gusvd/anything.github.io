@@ -4,7 +4,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
 			LoggedUserID = member.id;
 			userProfilePicture = member["profile-picture"] || null;
 			console.log(userProfilePicture);
-			document.getElementById("navbar-profile").href="/users/" + LoggedUserID + "#user-profile";
+			document.getElementById("navbar-profile").href="/users/" + LoggedUserID;
 		  	document.getElementById("navbar-listings").href="/users/" + LoggedUserID;
 		  	if (userProfilePicture) { document.getElementById("navbar-profile-image").srcset= userProfilePicture };
 		  	sessionStorage.setItem('LoggedUserID', LoggedUserID);
