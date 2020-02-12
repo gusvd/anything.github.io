@@ -2,11 +2,11 @@ window.addEventListener('DOMContentLoaded', (event) => {
 	MemberStack.onReady.then(function(member) {
 		if (member.loggedIn) {
 			LoggedUserID = member.id;
-			userProfilePicture = member["profile-picture"];
+			userProfilePicture = member["profile-picture"] || null;
 			console.log(userProfilePicture);
 			document.getElementById("navbar-profile").href="/users/" + LoggedUserID + "#user-profile";
 		  	document.getElementById("navbar-listings").href="/users/" + LoggedUserID;
-		  	document.getElementById("navbar-profile-image").srcset= userProfilePicture;
+		  	if (userProfilePicture) { document.getElementById("navbar-profile-image").srcset= userProfilePicture };
 		  	sessionStorage.setItem('LoggedUserID', LoggedUserID);
 		} else {
 			sessionStorage.setItem('LoggedUserID', null);
